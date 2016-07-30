@@ -22,7 +22,7 @@ app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === apiToken) {
         res.send(req.query['hub.challenge']);
     }
-    res.send('Error, wrong validation token');
+    else res.send('Error, wrong validation token');
 });
 
 
@@ -38,6 +38,11 @@ app.post('/webhook/', function (req, res) {
 
 
                 // write your code here
+
+                messageData = {
+                    text:"Hi I am bot, this is first time I am sending reply"
+                };
+                apiInstance.send(sender, pageToken, messageData);
 
 
             }
