@@ -39,12 +39,6 @@ app.post('/webhook/', function (req, res) {
 
                 // write your code here
 
-                messageData = {
-                    text:"Hi I am bot, this is first time I am sending reply"
-                };
-                apiInstance.send(sender, pageToken, messageData);
-
-
             }
     }
     res.sendStatus(200);
